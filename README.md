@@ -81,21 +81,6 @@ curl -i -X DELETE http://localhost:8080/objects/photos/pic1
 The response is `200 OK` if the object was deleted, or `404 Not Found` if it
 was not there.
 
-## How de-duplication works
-
-The service avoids storing the same text more than once **inside one bucket**.
-For example, if `photos/pic1` and `photos/pic2` contain exactly the same text,
-both object IDs refer to one stored copy. Reading either ID returns that text.
-
-Each bucket stores its own copy. So if the same text is also saved in the
-`archive` bucket, `archive` has a separate copy from `photos`.
-
-When an object using shared text is deleted, the service keeps the text while
-another object ID in that bucket still refers to it. It removes the stored
-copy after the last such object is deleted or replaced. The comparison uses the
-exact request bytes, so even a different space or newline counts as different
-text.
-
 ## Notes
 
 - Request bodies can be up to 10 MiB.
