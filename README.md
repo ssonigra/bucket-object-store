@@ -89,8 +89,4 @@ was not there.
 
 ## AI assistance
 
-ChatGPT assisted with interpreting the assignment, discussing the bucket-local
-de-duplication design, and drafting the implementation, tests, and README. The
-implementation was checked with `go test ./...` and with live HTTP requests for
-`PUT`, `GET`, `DELETE`, and `GET` after deletion (which returned `404`). The code
-was also formatted with `gofmt` and compiled with `go build`.
+ChatGPT assisted with discussing the bucket-local de-duplication design, and drafting the implementation and tests. The implementation was checked with `go test ./...` and with live HTTP  equests for `PUT`, `GET`, `DELETE`, and `GET` after deletion (which returned `404`). The code was also formatted with `gofmt` and compiled with `go build`.
